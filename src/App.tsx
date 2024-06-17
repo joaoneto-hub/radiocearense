@@ -55,10 +55,10 @@ function App() {
       </header>
       <Card className="max-w-md mx-auto p-4 mt-10">
         <CardTitle className="text-lg font-bold mb-2">
-          Escreva sua cartinha aqui
+          Escreva sua cartinha aqui ❤️
         </CardTitle>
         <CardDescription className="text-gray-600 mb-4">
-          Faça a declaração de amor para a pessoa que você ama
+          Faça a declaração de amor para a pessoa que você ama. ❤️
         </CardDescription>
         <form ref={form} onSubmit={handleSubmit}>
           <CardContent className="pt-10">
