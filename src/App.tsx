@@ -1,4 +1,10 @@
-import { Card, CardContent, CardDescription, CardTitle } from "./components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardTitle,
+} from "./components/ui/card";
 import { Input } from "./components/ui/input";
 import { Textarea } from "./components/ui/textarea";
 import { Button } from "./components/ui/button";
@@ -14,28 +20,30 @@ function App() {
     para: "",
     mensagem: "",
   });
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (form.current) {
+      setLoading(true);
       emailjs
-        .sendForm(
-          "service_km0ta0u",
-          "template_0e0zj2v",
-          form.current,
-          {
-            publicKey: "7cLGIQlY_Xn3BK4qt",
-            ...formData,
-          }
-        )
+        .sendForm("service_km0ta0u", "template_0e0zj2v", form.current, {
+          publicKey: "7cLGIQlY_Xn3BK4qt",
+          ...formData,
+        })
         .then(
           () => {
             toast.success("Cartinha enviada com sucesso!❤️");
+            setTimeout(() => {
+              toast.success("A Rádio cearense agradece por sua cartinha!😊");
+            }, 800);
             setFormData({ de: "", para: "", mensagem: "" });
+            setLoading(false);
           },
           (error) => {
             toast.error("FAILED...", error.text);
+            setLoading(false);
           }
         );
     }
@@ -55,17 +63,16 @@ function App() {
       </header>
       <Card className="max-w-md mx-auto p-4 mt-10">
         <CardTitle className="text-lg font-bold mb-2">
-          Escreva sua cartinha aqui ❤️
+          ⬇️ Escreva sua cartinha aqui ⬇️
         </CardTitle>
         <CardDescription className="text-gray-600 mb-4">
-          Faça a declaração de amor para a pessoa que você ama. ❤️
+          Faça a declaração de amor para a pessoa que você ama! ❤️
         </CardDescription>
         <form ref={form} onSubmit={handleSubmit}>
           <CardContent className="pt-10">
             <Input
               className="mb-4"
               placeholder="De:"
-
               name="de"
               value={formData.de}
               onChange={handleInputChange}
@@ -74,7 +81,6 @@ function App() {
             <Input
               className="mb-4"
               placeholder="Para:"
-              
               name="para"
               value={formData.para}
               onChange={handleInputChange}
@@ -83,7 +89,6 @@ function App() {
             <Textarea
               className="mb-4"
               placeholder="Escreva sua mensagem..."
-          
               rows={5}
               name="mensagem"
               value={formData.mensagem}
@@ -91,14 +96,20 @@ function App() {
               required
             />
             <Button
-              className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
+              className={`bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded ${
+                loading ? "cursor-not-allowed opacity-50" : ""
+              }`}
               type="submit"
+              disabled={loading}
             >
-              Enviar
+              {loading ? "Enviando..." : "Enviar"}
             </Button>
           </CardContent>
         </form>
       </Card>
+      <div className="text-center mt-4">
+        Feito com amor por: João Rodrigues ❤️
+      </div>
     </>
   );
 }
