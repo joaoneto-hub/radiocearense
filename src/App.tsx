@@ -2,7 +2,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardTitle,
 } from "./components/ui/card";
 import { Input } from "./components/ui/input";
