@@ -1,30 +1,39 @@
-# React + TypeScript + Vite
+# 💌 Cartinhas Românticas — Sistema da Rádio Cearense & Podcast Acreano
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um projeto encantador desenvolvido com **React**, **TypeScript**, **TailwindCSS**, **ShadCN UI** e **EmailJS**, com deploy realizado na **Vercel**.  
+O sistema permite que os ouvintes da **Rádio Cearense** enviem mensagens e cartinhas românticas personalizadas dentro do contexto do **Podcast Acreano** ❤️
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Funcionalidades
 
-## Expanding the ESLint configuration
+- 💖 Envio de **cartinhas românticas personalizadas**
+- 🧍 Campo “**De:**” para o remetente
+- 💌 Campo “**Para:**” para o destinatário
+- 📝 Campo de **mensagem** onde o usuário escreve sua carta
+- 📤 Envio de mensagens diretamente para o e-mail configurado via **EmailJS**
+- 🎨 Interface moderna e responsiva com **TailwindCSS** e **ShadCN UI**
+- 🚀 Hospedado com amor na **Vercel**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## 🛠️ Tecnologias Utilizadas
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+| Tecnologia | Função |
+|-------------|--------|
+| **React** | Criação da interface do usuário |
+| **TypeScript** | Tipagem estática e melhor manutenção do código |
+| **TailwindCSS** | Estilização rápida e responsiva |
+| **ShadCN UI** | Componentes elegantes e acessíveis |
+| **EmailJS** | Envio de e-mails diretamente do front-end |
+| **Vercel** | Deploy rápido e gratuito do projeto |
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+---
+
+## 🚀 Como Rodar o Projeto Localmente
+
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/seu-usuario/cartinhas-romanticas.git
+cd cartinhas-romanticas
